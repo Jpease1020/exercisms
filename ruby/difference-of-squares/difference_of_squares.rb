@@ -7,19 +7,11 @@ class Squares
   end
 
   def square_of_sum
-    sum = 0
-    (1..num).to_a.each do |n|
-      sum += n
-    end
-    sum ** 2
+    (1..num).reduce(0, :+) ** 2
   end
 
   def sum_of_squares
-    sum = 0
-    (1..num).to_a.each do |n|
-      sum += n**2
-    end
-    sum
+    (1..num).inject(0) { |sum, n| sum += n**2 }
   end
 
   def difference
